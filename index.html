@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./index.css" />
+    <title>Work Day Scheduler</title>
+</head>
+
+<body>
+    <header>
+        <h1>Weather Dashboard</h1>
+    </header>
+    <main class="container">
+        <!-- row for searching area-->
+        <div class="row">
+            <aside class="col-2 aside">
+                <!-- input and submit button for searching -->
+                <form class="input-group">
+                    <h3>Search for a City:</h3>
+                    <input id="search-city" type="text">
+                    <button id="search-btn">Search</button>
+                </form>
+                <!-- clear button and list for searching history -->
+                <div class="searching-history-group">
+                    <button id="clear-btn">Clear History</button>
+                    <ul id="search-list">
+
+                    </ul>
+                </div>
+            </aside>
+            <section class="col-10 section">
+                <!-- Current Weather -->
+                <div class="current-city-weather">
+                    <h3 class="current-city-name"></h3>
+                    <p class="current">Temperature: <span id="temperature"></span></p>
+                    <p class="current">Wind: <span id="wind"></span></p>
+                    <p class="current">Humidity: <span id="humidity"></span></p>
+                    <p class="current">UV Index: <span id="uv-index"></span></p>
+                </div>
+                <!-- future weather for other 5 days -->
+                <div class="col-12 future-weather">
+                    <h3 class="row">5-Day Forecast: </h3>
+                    <div id="future-days" class="row">
+                        <!-- <ul class="col-2 cards">
+                            <li class="bolder">Date</li>
+                            <li>img</li>
+                            <li>Temp: </li>
+                            <li>Wind: </li>
+                            <li>Humidity: </li>
+                        </ul> -->
+                       
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>
