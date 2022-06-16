@@ -169,11 +169,3 @@ clearBtn.addEventListener('click', function () {
 })
 
 
-
-// resource
-// https://www.youtube.com/watch?v=cuEtnrL9-H0
-// https://stackoverflow.com/questions/44177417/how-to-display-openweathermap-weather-icon
-// https://openweathermap.org/current
-// https://openweathermap.org/api/one-call-api
-// https://webdesign.tutsplus.com/tutorials/build-a-simple-weather-app-with-vanilla-javascript--cms-33893
-// https://github.com/sahiljanbandhu/Weather-Dashboard
