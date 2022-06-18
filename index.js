@@ -8,12 +8,14 @@ let humidity = document.querySelector('#humidity')
 let uvIndex = document.querySelector('#uv-index')
 let temperature = document.querySelector('#temperature')
 let futureDays = document.querySelector('#future-days')
+let alert = document.querySelector('#alert')
 let apiKey = 'bcb88dc7e5fd8beb5627450205be6b7c'
 let inputVal = ''
 let storedCity = []
 let cityArr = []
 let forecastArr = []
 let card = ''
+let cityName = ''
 let clearBtn = document.querySelector('#clear-btn')
 
 // When Page loaded, rander localstorage to page
@@ -36,12 +38,22 @@ function getCurrentCityWeather() {
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${inputVal}&appid=${apiKey}&units=metric`
     return fetch(url)
         .then(function (response) {
+
+            if (response.ok) {
+                alert.classList.remove('show')
+                alert.classList.add('hide')
+            } else {
+                alert.classList.remove('hide')
+                alert.classList.add('show')
+            }
+
             return response.json();
         })
         .then(function (data) {
             let iconCode = data.weather[0].icon
             let iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`
             let date = new Date(data.dt * 1000).toLocaleDateString()
+            cityName = `${data.name}`
             currentCityName.innerHTML = `${data.name} (${date}) <img src="${iconUrl}">`
             wind.textContent = `${data.wind.speed} MPH`
             humidity.textContent = `${data.main.humidity}%`
@@ -49,7 +61,7 @@ function getCurrentCityWeather() {
             let lat = data.coord.lat
             let lon = data.coord.lon
             getOneCall(lat, lon)
-                .then(function (oneCallData) {                    
+                .then(function (oneCallData) {
                     let currentUVI = oneCallData.current.uvi
                     uvIndex.innerHTML = `${currentUVI}`
                     if (currentUVI < 4) {
@@ -66,14 +78,14 @@ function getCurrentCityWeather() {
                     // Clear forecast area before rander
                     futureDays.innerHTML = ''
                     forecast5Day()
-                   
                 })
+            return cityName
         })
 }
 
 // function for 5-Day forecast
 function forecast5Day() {
-    for (let i = 0; i <= forecastArr.length; i++) {
+    for (let i = 0; i < forecastArr.length; i++) {
         let forecastIconCode = forecastArr[i].weather[0].icon
         let forecastIconUrl = `https://openweathermap.org/img/wn/${forecastIconCode}@2x.png`
         let forecastDate = new Date(forecastArr[i].dt * 1000).toLocaleDateString()
@@ -122,7 +134,7 @@ function getOneCall(lat, lon) {
 function addToList() {
     let MAX_STORAGE = 8
     let cityString = ''
-    cityString = inputVal.toUpperCase()
+    cityString = cityName.toUpperCase()
     storedCity.unshift(cityString)
     storedCity.splice(MAX_STORAGE)
     localStorage.setItem('storedCity', JSON.stringify(storedCity))
@@ -145,17 +157,18 @@ function addToList() {
 inputGroup.addEventListener('submit', function (e) {
     e.preventDefault()
     inputVal = searchCity.value
-    // if
-    console.log(typeof parseInt(inputVal))
-    // if (inputVal === '') {
-    //     return
-    // } else if (typeof inputVal === 'number') {
-    //     return
-    // } else {
-    //     getCurrentCityWeather(inputVal)
-    //     addToList()
-    // }
-    
+
+    if (inputVal === '') {
+        return
+    }
+
+    getCurrentCityWeather(inputVal)
+        .then(function (cityName) {
+            // add search to history list
+            addToList()
+        })
+
+
     // clear input value after search
     searchCity.value = ''
     futureDays.innerHTML = ''

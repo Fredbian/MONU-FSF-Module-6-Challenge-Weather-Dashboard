@@ -10,6 +10,22 @@ input,button {
     width: 100%;
     height: 35px;
     border-radius: 5px;
+    text-align: center;
+}
+
+.custom-alart {
+    width: 100%;
+    line-height: 1;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
 }
 
 ul {
@@ -50,7 +66,7 @@ input {
 
 button {
     border: none;
-    background-color: skyblue;
+    background-color: grey;
     cursor: pointer;
     margin: 10px 0;
     color: white;
@@ -59,8 +75,8 @@ button {
     font-weight: 600;
 }
 
-.newBtn {
-    background-color: grey;
+.skyblue {
+    background-color: skyblue;
 }
 
 /* set style for section */
