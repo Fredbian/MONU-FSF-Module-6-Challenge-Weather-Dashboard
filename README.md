@@ -13,4 +13,9 @@ Weather Dashboard
 
 
 ## Screenshot:
-* 
+* ![Alt text](https://github.com/Fredbian/MONU-FSF-Module-6-Challenge-Weather-Dashboard/blob/main/images/127.0.0.1_5500_Module-6-Challenge-Weather-Dashboard_index.html%20(2).png)
+* ![Alt text](https://github.com/Fredbian/MONU-FSF-Module-6-Challenge-Weather-Dashboard/blob/main/images/127.0.0.1_5500_Module-6-Challenge-Weather-Dashboard_index.html%20(5).png)
+
+## URL Links:
+* GitHub URL: https://github.com/Fredbian/MONU-FSF-Module-6-Challenge-Weather-Dashboard.git
+* Deployed URL: https://fredbian.github.io/MONU-FSF-Module-6-Challenge-Weather-Dashboard/
