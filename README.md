@@ -11,6 +11,11 @@ Weather Dashboard
 * When user click on a city in the search history, the weather with current and future conditions for that city will be presented to user again.
 * Search history will be stored in localstorage, and when user click "Clear History" button, it will clear localstorage and remove all search history.
 
+## Technical
+* HTML
+* CSS
+* JavaScript
+* Openweather API
 
 ## Screenshot:
 ![Alt text](https://github.com/Fredbian/MONU-FSF-Module-6-Challenge-Weather-Dashboard/blob/main/images/127.0.0.1_5500_Module-6-Challenge-Weather-Dashboard_index.html%20(2).png)
