@@ -1,4 +1,4 @@
-# Module-6-Challenge-Weather-Dashboard
+# Weather-Dashboard
 Weather Dashboard
 
 ## Description:
